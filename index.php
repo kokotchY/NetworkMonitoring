@@ -17,6 +17,8 @@ $pages = array();
 $pages['login'] = 'pages/login.php';
 $pages['register'] = 'pages/register.php';
 $pages['logout'] = 'pages/logout.php';
+$pages['listAlerts'] = 'pages/listAlerts.php';
+$pages['createEntryFromAlert'] = 'pages/createEntryFromAlert.php';
 
 $found = false;
 
@@ -34,4 +36,5 @@ $smarty->assign('logged', isset($_SESSION['logged'])?$_SESSION['logged']:false);
 $smarty->assign('login', isset($_SESSION['login'])?$_SESSION['login']:'');
 $smarty->display('design.tpl');
 
+$dbh = null;
 ?>

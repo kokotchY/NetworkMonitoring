@@ -2,6 +2,9 @@
 	<head>
 		<title>Network Monitoring - {$currentPage}</title>
 		<style type="text/css">
+			#listAlerts { 
+				width: 100%
+			}
 		</style>
 	</head>
 	<body>
