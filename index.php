@@ -21,6 +21,7 @@ $pages['listAlerts'] = 'pages/listAlerts.php';
 $pages['createEntryFromAlert'] = 'pages/createEntryFromAlert.php';
 $pages['listMacs'] = 'pages/listMacs.php';
 $pages['listOwners'] = 'pages/listOwners.php';
+$pages['addOwner'] = 'pages/addOwner.php';
 
 $level['login'] = 0;
 $level['register'] = 0;
@@ -29,6 +30,7 @@ $level['listAlerts'] = 2;
 $level['createEntryFromAlert'] = 3;
 $level['listMacs'] = 2;
 $level['listOwners'] = 2;
+$level['addOwner'] = 3;
 
 $found = false;
 

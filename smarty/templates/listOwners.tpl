@@ -12,3 +12,5 @@
 	<tr><td colspan="2">No owners</td></tr>
 	{/foreach}
 </table>
+
+<a href="?addOwner">Create an owner</a>
