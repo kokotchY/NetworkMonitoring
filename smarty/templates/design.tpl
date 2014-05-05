@@ -11,6 +11,11 @@
 	border: 1px solid black;
 	text-align: center;
 }
+#listOwners {
+	width: 100%;
+	border: 1px solid black;
+	text-align: center;
+}
 		</style>
 	</head>
 	<body>
