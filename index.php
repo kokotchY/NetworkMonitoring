@@ -35,6 +35,15 @@ $level['listOwners'] = 2;
 $level['addOwner'] = 3;
 $level['deleteOwner'] = 3;
 
+$header = array();
+$header['login'] = 'Login';
+$header['register'] = 'Register';
+$header['logout'] = 'Logout';
+$header['listAlerts'] = 'List alerts';
+$header['createEntryFromAlert'] = 'Create Entry from Alert';
+$header['listMacs'] = 'List macs';
+$header['listOwners'] = 'List Owners';
+$header['addOwner'] = 'Create an owner';
 $header['deleteOwner'] = 'Delete an owner';
 
 $found = false;

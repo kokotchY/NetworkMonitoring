@@ -1,6 +1,3 @@
-<h1>
-	Create an owner
-</h1>
 {$message}
 <form action="?addOwner" method="post">
 	<label for="name">Name <input type="text" name="name" id="name"  /> </label> <br />
