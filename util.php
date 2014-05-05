@@ -76,4 +76,11 @@ function generateSalt() {
 	return $randomString;
 }
 
+function hasLevelAccess($level) {
+	if ($level == 0) {
+		return true;
+	}
+
+	return isset($_SESSION['level']) && $_SESSION['level'] >= $level;
+}
 ?>

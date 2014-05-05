@@ -22,12 +22,22 @@ $pages['createEntryFromAlert'] = 'pages/createEntryFromAlert.php';
 $pages['listMacs'] = 'pages/listMacs.php';
 $pages['listOwners'] = 'pages/listOwners.php';
 
+$level['login'] = 0;
+$level['register'] = 0;
+$level['logout'] = 1;
+$level['listAlerts'] = 2;
+$level['createEntryFromAlert'] = 3;
+$level['listMacs'] = 2;
+$level['listOwners'] = 2;
+
 $found = false;
 
 foreach ($pages as $name => $file) {
 	if (isset($_GET[$name])) {
-		$found = true;
-		require $file;
+		if (hasLevelAccess($level[$name])) {
+			$found = true;
+			require $file;
+		}
 	}
 }
 

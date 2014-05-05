@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST['submit'])) {
-	$sql = 'SELECT `id_user`, `username`, `password`, `salt`
+	$sql = 'SELECT `id_user`, `username`, `password`, `salt`, `level`
 		FROM `users`
 		WHERE `username` = :username';
 	$stmt = $dbh->prepare($sql);
@@ -14,6 +14,7 @@ if (isset($_POST['submit'])) {
 		if ($password == $row['password']) {
 			$_SESSION['logged'] = true;
 			$_SESSION['login'] = $username;
+			$_SESSION['level'] = $row['level'];
 			$smarty->assign('loginMessage', 'You are successfully logged as '.$username);
 		} else {
 			$smarty->assign('loginMessage', 'The username/password wasn\'t found in the database');
