@@ -2,9 +2,15 @@
 	<head>
 		<title>Network Monitoring - {$currentPage}</title>
 		<style type="text/css">
-			#listAlerts { 
-				width: 100%
-			}
+#listAlerts { 
+	width: 100%;
+}
+
+#listMacs {
+	width: 100%;
+	border: 1px solid black;
+	text-align: center;
+}
 		</style>
 	</head>
 	<body>

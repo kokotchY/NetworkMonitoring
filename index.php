@@ -19,6 +19,7 @@ $pages['register'] = 'pages/register.php';
 $pages['logout'] = 'pages/logout.php';
 $pages['listAlerts'] = 'pages/listAlerts.php';
 $pages['createEntryFromAlert'] = 'pages/createEntryFromAlert.php';
+$pages['listMacs'] = 'pages/listMacs.php';
 
 $found = false;
 
