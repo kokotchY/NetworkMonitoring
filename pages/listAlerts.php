@@ -18,7 +18,11 @@ if ($execute && $stmt->rowCount() > 0) {
 		$createEntry = createLink($idAlert, 'createEntryFromAlert', 'Create Entry');
 		$editEntry = createLink($idAlert, 'editAlert', 'Edit');
 		$deleteEntry = createLink($idAlert, 'deleteAlert', 'Delete');
-		$links = array($createEntry, $editEntry, $deleteEntry);
+		if (hasLevelAccess(3)) {
+			$links = array($createEntry, $editEntry, $deleteEntry);
+		} else {
+			$links = array();
+		}
 		$row['links'] = implode(' - ', $links);
 		$rows[] = $row;
 	}

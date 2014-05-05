@@ -15,6 +15,7 @@ if (isset($_POST['submit'])) {
 			$_SESSION['logged'] = true;
 			$_SESSION['login'] = $username;
 			$_SESSION['level'] = $row['level'];
+			$_SESSION['id_user'] = $row['id_user'];
 			$smarty->assign('loginMessage', 'You are successfully logged as '.$username);
 		} else {
 			$smarty->assign('loginMessage', 'The username/password wasn\'t found in the database');

@@ -11,8 +11,10 @@
 		<td>{$owner['email']}</td>
 		<td>{$owner['nb_mac']}</td>
 		<td>
+		{if $displayActions}
 		<a href="?editOwner&amp;id_owner={$owner['id_owner']}">Edit</a> -
 		<a href="?deleteOwner&amp;id_owner={$owner['id_owner']}">Delete</a>
+		{/if}
 		</td>
 	</tr>
 	{foreachelse}
@@ -20,4 +22,6 @@
 	{/foreach}
 </table>
 
+{if $displayActions}
 <a href="?addOwner">Create an owner</a>
+{/if}

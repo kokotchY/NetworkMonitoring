@@ -8,6 +8,8 @@ require 'databaseConnection.php';
 
 $smarty = new Smarty();
 
+$smarty->debugging = false;
+
 $smarty->setTemplateDir('smarty/templates');
 $smarty->setCompileDir('smarty/templates_c');
 $smarty->setCacheDir('smarty/cache');
@@ -23,6 +25,7 @@ $pages['listMacs'] = 'pages/listMacs.php';
 $pages['listOwners'] = 'pages/listOwners.php';
 $pages['addOwner'] = 'pages/addOwner.php';
 $pages['deleteOwner'] = 'pages/deleteOwner.php';
+$pages['refreshLevel'] = 'pages/refreshLevel.php';
 
 $level = array();
 $level['login'] = 0;
@@ -34,6 +37,7 @@ $level['listMacs'] = 2;
 $level['listOwners'] = 2;
 $level['addOwner'] = 3;
 $level['deleteOwner'] = 3;
+$level['refreshLevel'] = 1;
 
 $header = array();
 $header['login'] = 'Login';
@@ -68,6 +72,7 @@ if (!$found) {
 
 $smarty->assign('logged', isset($_SESSION['logged'])?$_SESSION['logged']:false);
 $smarty->assign('login', isset($_SESSION['login'])?$_SESSION['login']:'');
+$smarty->assign('level', isset($_SESSION['level'])?$_SESSION['level']:'');
 $smarty->display('design.tpl');
 
 $dbh = null;
