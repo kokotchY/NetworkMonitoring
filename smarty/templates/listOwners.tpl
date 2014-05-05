@@ -2,14 +2,21 @@
 	<tr>
 		<th>Name</th>
 		<th>Email</th>
+		<th>Macs</th>
+		<th>Actions</th>
 	</tr>
 	{foreach $owners as $owner}
 	<tr>
 		<td>{$owner['name']}</td>
 		<td>{$owner['email']}</td>
+		<td>{$owner['nb_mac']}</td>
+		<td>
+		<a href="?editOwner&amp;id_owner={$owner['id_owner']}">Edit</a> -
+		<a href="?deleteOwner&amp;id_owner={$owner['id_owner']}">Delete</a>
+		</td>
 	</tr>
 	{foreachelse}
-	<tr><td colspan="2">No owners</td></tr>
+	<tr><td colspan="3">No owners</td></tr>
 	{/foreach}
 </table>
 

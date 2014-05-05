@@ -21,6 +21,9 @@
 	<body>
 		{include file='header.tpl'}
 		{include file='menu.tpl'}
+		{if $hasHeader}
+		<h1>{$header}</h1>
+		{/if}
 		{include file=$currentPage}
 		{include file='footer.tpl'}
 	</body>

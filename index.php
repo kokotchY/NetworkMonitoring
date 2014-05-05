@@ -22,7 +22,9 @@ $pages['createEntryFromAlert'] = 'pages/createEntryFromAlert.php';
 $pages['listMacs'] = 'pages/listMacs.php';
 $pages['listOwners'] = 'pages/listOwners.php';
 $pages['addOwner'] = 'pages/addOwner.php';
+$pages['deleteOwner'] = 'pages/deleteOwner.php';
 
+$level = array();
 $level['login'] = 0;
 $level['register'] = 0;
 $level['logout'] = 1;
@@ -31,13 +33,21 @@ $level['createEntryFromAlert'] = 3;
 $level['listMacs'] = 2;
 $level['listOwners'] = 2;
 $level['addOwner'] = 3;
+$level['deleteOwner'] = 3;
+
+$header['deleteOwner'] = 'Delete an owner';
 
 $found = false;
+$smarty->assign('hasHeader', false);
 
 foreach ($pages as $name => $file) {
 	if (isset($_GET[$name])) {
 		if (hasLevelAccess($level[$name])) {
 			$found = true;
+			if (isset($header[$name])) {
+				$smarty->assign('hasHeader', true);
+				$smarty->assign('header', $header[$name]);
+			}
 			require $file;
 		}
 	}
@@ -46,6 +56,7 @@ foreach ($pages as $name => $file) {
 if (!$found) {
 	$smarty->assign('currentPage', 'index.tpl');
 }
+
 $smarty->assign('logged', isset($_SESSION['logged'])?$_SESSION['logged']:false);
 $smarty->assign('login', isset($_SESSION['login'])?$_SESSION['login']:'');
 $smarty->display('design.tpl');
