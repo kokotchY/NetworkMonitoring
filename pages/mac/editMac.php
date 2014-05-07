@@ -70,6 +70,6 @@ if (isset($_GET['id_mac'])) {
 }
 
 
-$smarty->assign('currentPage', 'editMac.tpl');
+$smarty->assign('currentPage', 'mac/editMac.tpl');
 
 ?>

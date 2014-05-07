@@ -12,5 +12,5 @@ if ($stmt->execute()) {
 	$smarty->assign('macs', array());
 }
 
-$smarty->assign('currentPage', 'listMacs.tpl');
+$smarty->assign('currentPage', 'mac/listMacs.tpl');
 ?>

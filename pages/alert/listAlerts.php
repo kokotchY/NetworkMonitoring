@@ -29,6 +29,6 @@ if ($execute && $stmt->rowCount() > 0) {
 }
 
 $smarty->assign('alerts', $rows);
-$smarty->assign('currentPage', 'listAlerts.tpl')
+$smarty->assign('currentPage', 'alert/listAlerts.tpl')
 
 ?>

@@ -19,12 +19,12 @@
 		</style>
 	</head>
 	<body>
-		{include file='header.tpl'}
-		{include file='menu.tpl'}
+		{include file='layout/header.tpl'}
+		{include file='layout/menu.tpl'}
 		{if $hasHeader}
 		<h1>{$header}</h1>
 		{/if}
 		{include file=$currentPage}
-		{include file='footer.tpl'}
+		{include file='layout/footer.tpl'}
 	</body>
 </html>

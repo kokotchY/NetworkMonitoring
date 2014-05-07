@@ -21,6 +21,6 @@ if (isset($_POST['submit'])) {
 	$smarty->assign('message', '');
 }
 
-$smarty->assign('currentPage', 'addOwner.tpl');
+$smarty->assign('currentPage', 'owner/addOwner.tpl');
 
 ?>

@@ -95,6 +95,6 @@ if (isset($_GET['id_alert'])) {
 	$smarty->assign('creationMessage', 'The entry has been created');
 }
 
-$smarty->assign('currentPage', 'createEntryFromAlert.tpl');
+$smarty->assign('currentPage', 'alert/createEntryFromAlert.tpl');
 
 ?>

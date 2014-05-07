@@ -13,6 +13,6 @@ if ($stmt->execute()) {
 	$smarty->assign('owners', array());	
 	$smarty->assign('displayActions', false);
 }
-$smarty->assign('currentPage', 'listOwners.tpl');
+$smarty->assign('currentPage', 'owner/listOwners.tpl');
 
 ?>

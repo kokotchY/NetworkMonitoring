@@ -36,6 +36,6 @@ if (isset($_POST['submit'])) {
 	$smarty->assign('registerMessage', '');
 }
 
-$smarty->assign('currentPage', 'register.tpl');
+$smarty->assign('currentPage', 'user/register.tpl');
 
 ?>

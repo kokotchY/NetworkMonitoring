@@ -27,6 +27,6 @@ if (isset($_POST['submit'])) {
 	$smarty->assign('loginMessage', '');
 }
 
-$smarty->assign('currentPage', 'login.tpl');
+$smarty->assign('currentPage', 'user/login.tpl');
 
 ?>

@@ -16,18 +16,18 @@ $smarty->setCacheDir('smarty/cache');
 $smarty->setConfigDir('smarty/config');
 
 $pages = array();
-$pages['login'] = 'pages/login.php';
-$pages['register'] = 'pages/register.php';
-$pages['logout'] = 'pages/logout.php';
-$pages['listAlerts'] = 'pages/listAlerts.php';
-$pages['createEntryFromAlert'] = 'pages/createEntryFromAlert.php';
-$pages['listMacs'] = 'pages/listMacs.php';
-$pages['listOwners'] = 'pages/listOwners.php';
-$pages['addOwner'] = 'pages/addOwner.php';
-$pages['deleteOwner'] = 'pages/deleteOwner.php';
-$pages['refreshLevel'] = 'pages/refreshLevel.php';
-$pages['editMac'] = 'pages/editMac.php';
-$pages['deleteMac'] = 'pages/deleteMac.php';
+$pages['login'] = 'pages/user/login.php';
+$pages['register'] = 'pages/user/register.php';
+$pages['logout'] = 'pages/user/logout.php';
+$pages['listAlerts'] = 'pages/alert/listAlerts.php';
+$pages['createEntryFromAlert'] = 'pages/alert/createEntryFromAlert.php';
+$pages['listMacs'] = 'pages/mac/listMacs.php';
+$pages['listOwners'] = 'pages/owner/listOwners.php';
+$pages['addOwner'] = 'pages/owner/addOwner.php';
+$pages['deleteOwner'] = 'pages/owner/deleteOwner.php';
+$pages['refreshLevel'] = 'pages/user/refreshLevel.php';
+$pages['editMac'] = 'pages/mac/editMac.php';
+$pages['deleteMac'] = 'pages/mac/deleteMac.php';
 
 $level = array();
 $level['login'] = 0;
@@ -79,7 +79,7 @@ if (!$found) {
 $smarty->assign('logged', isset($_SESSION['logged'])?$_SESSION['logged']:false);
 $smarty->assign('login', isset($_SESSION['login'])?$_SESSION['login']:'');
 $smarty->assign('level', isset($_SESSION['level'])?$_SESSION['level']:'');
-$smarty->display('design.tpl');
+$smarty->display('layout/design.tpl');
 
 $dbh = null;
 ?>
