@@ -16,16 +16,6 @@ function getOwners($dbh) {
 	return $options;
 }
 
-function getPostInput($fields) {
-	$result = array();
-	foreach ($fields as $field) {
-		if (isset($_POST[$field])) {
-			$result[$field] = $_POST[$field];
-		}
-	}
-	return $result;
-}
-
 function getTypes($dbh) {
 	$sql = 'SELECT `id_type`, `name` FROM `typeConnection` ORDER BY `name` ASC';
 	$stmt = $dbh->prepare($sql);

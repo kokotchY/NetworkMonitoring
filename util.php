@@ -83,4 +83,22 @@ function hasLevelAccess($level) {
 
 	return isset($_SESSION['level']) && $_SESSION['level'] >= $level;
 }
+
+function getPostInput($fields) {
+	return getInputFromArray($_POST, $fields);
+}
+
+function getGetInput($fields) {
+	return getInputFromArray($_GET, $fields);
+}
+
+function getInputFromArray($array, $fields) {
+	$result = array();
+	foreach ($fields as $field) {
+		if (isset($array[$field])) {
+			$result[$field] = $array[$field];
+		}
+	}
+	return $result;
+}
 ?>

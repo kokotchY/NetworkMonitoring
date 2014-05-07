@@ -27,6 +27,7 @@ $pages['addOwner'] = 'pages/addOwner.php';
 $pages['deleteOwner'] = 'pages/deleteOwner.php';
 $pages['refreshLevel'] = 'pages/refreshLevel.php';
 $pages['editMac'] = 'pages/editMac.php';
+$pages['deleteMac'] = 'pages/deleteMac.php';
 
 $level = array();
 $level['login'] = 0;
@@ -40,6 +41,7 @@ $level['addOwner'] = 3;
 $level['deleteOwner'] = 3;
 $level['refreshLevel'] = 1;
 $level['editMac'] = 3;
+$level['deleteMac'] = 3;
 
 $header = array();
 $header['login'] = 'Login';
@@ -52,6 +54,7 @@ $header['listOwners'] = 'List Owners';
 $header['addOwner'] = 'Create an owner';
 $header['deleteOwner'] = 'Delete an owner';
 $header['editMac'] = 'Edit a mac';
+$header['deleteMac'] = 'Delete a mac';
 
 $found = false;
 $smarty->assign('hasHeader', false);
