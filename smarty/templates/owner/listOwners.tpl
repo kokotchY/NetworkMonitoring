@@ -9,7 +9,7 @@
 	<tr>
 		<td>{$owner['name']}</td>
 		<td>{$owner['email']}</td>
-		<td>{$owner['nb_mac']}</td>
+		<td><a href="?listMacs&amp;id_owner={$owner['id_owner']}">{$owner['nb_mac']}</a></td>
 		<td>
 		{if $displayActions}
 		<a href="?editOwner&amp;id_owner={$owner['id_owner']}">Edit</a> -

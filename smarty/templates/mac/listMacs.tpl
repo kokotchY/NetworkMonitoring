@@ -10,7 +10,10 @@
 	{foreach $macs as $mac}
 	<tr>
 		<td>{$mac['name']}</td>
-		<td>{$mac['owner']}</td>
+		<td>
+		<a href="?listMacs&amp;id_owner={$mac['id_owner']}">{$mac['owner']}</a>
+
+		</td>
 		<td>{$mac['mac']}</td>
 		<td>{$mac['ip']}</td>
 		<td>{$mac['type']}</td>
