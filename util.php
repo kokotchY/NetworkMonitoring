@@ -101,4 +101,13 @@ function getInputFromArray($array, $fields) {
 	}
 	return $result;
 }
+
+function setValueFromSession($smarty, $name, $default) {
+	if (isset($_SESSION[$name])) {
+		$value = $_SESSION[$name];
+	} else {
+		$value = $default;
+	}
+	$smarty->assign($name, $value);
+}
 ?>

@@ -16,6 +16,12 @@
 	border: 1px solid black;
 	text-align: center;
 }
+
+#listUsers {
+	width: 100%;
+	border: 1px solid black;
+	text-align: center;
+}
 		</style>
 	</head>
 	<body>

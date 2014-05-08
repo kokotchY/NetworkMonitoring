@@ -28,6 +28,7 @@ $pages['deleteOwner'] = 'pages/owner/deleteOwner.php';
 $pages['refreshLevel'] = 'pages/user/refreshLevel.php';
 $pages['editMac'] = 'pages/mac/editMac.php';
 $pages['deleteMac'] = 'pages/mac/deleteMac.php';
+$pages['listUsers'] = 'pages/user/listUsers.php';
 
 $level = array();
 $level['login'] = 0;
@@ -42,6 +43,7 @@ $level['deleteOwner'] = 3;
 $level['refreshLevel'] = 1;
 $level['editMac'] = 3;
 $level['deleteMac'] = 3;
+$level['listUsers'] = 5;
 
 $header = array();
 $header['login'] = 'Login';
@@ -55,6 +57,7 @@ $header['addOwner'] = 'Create an owner';
 $header['deleteOwner'] = 'Delete an owner';
 $header['editMac'] = 'Edit a mac';
 $header['deleteMac'] = 'Delete a mac';
+$header['listUsers'] = 'List users';
 
 $found = false;
 $smarty->assign('hasHeader', false);
@@ -76,9 +79,11 @@ if (!$found) {
 	$smarty->assign('currentPage', 'index.tpl');
 }
 
-$smarty->assign('logged', isset($_SESSION['logged'])?$_SESSION['logged']:false);
-$smarty->assign('login', isset($_SESSION['login'])?$_SESSION['login']:'');
-$smarty->assign('level', isset($_SESSION['level'])?$_SESSION['level']:'');
+setValueFromSession($smarty, 'logged', false);
+setValueFromSession($smarty, 'login', '');
+setValueFromSession($smarty, 'level', '');
+setValueFromSession($smarty, 'id_user', '');
+
 $smarty->display('layout/design.tpl');
 
 $dbh = null;
