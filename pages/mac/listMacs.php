@@ -8,7 +8,35 @@ if (isset($_GET['id_owner'])) {
 	$sql .= 'WHERE m.`id_owner` = :id_owner'."\n";
 	$input = getGetInput(array('id_owner'));
 }
-$sql .= 'ORDER BY m.`name`';
+
+$smarty->assign('order', 'asc');
+$smarty->assign('orderField', 'name');
+
+if (isset($_GET['order'])) {
+	if (isset($_GET['desc'])) {
+		$order = 'DESC';
+	} else {
+		$order = 'ASC';
+	}
+	$orders = array();
+	$orders['name'] = 'm.`name`';
+	$orders['owner'] = 'o.`name`';
+	$orders['mac'] = 'm.`mac`';
+	$orders['ip'] = 'm.`ip`';
+	$orders['type'] = 't.`name`';
+
+	$orderField = $_GET['order'];
+	if (isset($orders[$orderField])) {
+		$smarty->assign('order', $order);
+		$smarty->assign('orderField', $orderField);
+		$sql .= 'ORDER BY '.$orders[$orderField].' '.$order;
+	} else {
+		$sql .= 'ORDER BY m.`name` ASC';
+	}
+
+} else {
+	$sql .= 'ORDER BY m.`name` ASC';
+}
 
 $stmt = $dbh->prepare($sql);
 if ($stmt->execute($input)) {

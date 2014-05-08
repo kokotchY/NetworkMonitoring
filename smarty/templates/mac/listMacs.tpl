@@ -1,10 +1,10 @@
 <table id="listMacs">
 	<tr>
-		<th>Name</th>
-		<th>Owner</th>
-		<th>MAC</th>
-		<th>IP</th>
-		<th>Type</th>
+		<th>Name <a href="?listMacs&order=name&amp;desc">\/</a> <a href="?listMacs&amp;order=name&amp;asc">/\</a></th>
+		<th>Owner <a href="?listMacs&order=owner&amp;desc">\/</a> <a href="?listMacs&amp;order=owner&amp;asc">/\</a></th>
+		<th>MAC <a href="?listMacs&order=mac&amp;desc">\/</a> <a href="?listMacs&amp;order=mac&amp;asc">/\</a></th>
+		<th>IP <a href="?listMacs&order=ip&amp;desc">\/</a> <a href="?listMacs&amp;order=ip&amp;asc">/\</a></th>
+		<th>Type <a href="?listMacs&order=type&amp;desc">\/</a> <a href="?listMacs&amp;order=type&amp;asc">/\</a></th>
 		<th>Actions</th>
 	</tr>
 	{foreach $macs as $mac}
