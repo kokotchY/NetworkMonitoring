@@ -1,7 +1,9 @@
 <?php
 
-require '../databaseConnection.php';
-require '../util.php';
+
+
+require '/home/kokotchy/public_html/networkMonitoring/databaseConnection.php';
+require '/home/kokotchy/public_html/networkMonitoring/util.php';
 
 $filename = '/tmp/output.xml';
 $command = 'sudo nmap -oX '.$filename.' -sP -n 192.168.1.0/24';
