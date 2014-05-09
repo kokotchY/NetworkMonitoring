@@ -17,7 +17,7 @@
 	text-align: center;
 }
 
-#listUsers {
+#listUsers, #listStatistics {
 	width: 100%;
 	border: 1px solid black;
 	text-align: center;
