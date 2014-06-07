@@ -84,7 +84,7 @@ if (file_exists($filename)) {
 			if ($execute && $stmt->rowCount() == 0) {
 				if (needCreateAlert($dbh, $mac, $ip)) {
 					displayErrror($mac, $ip);
-					//$alerts[] = createAlert($dbh, $mac, $ip);
+					$alerts[] = createAlert($dbh, $mac, $ip);
 				}
 			} else {
 				displayMessage('Alert already created');
