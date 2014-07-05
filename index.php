@@ -16,58 +16,64 @@ $smarty->setCacheDir('smarty/cache');
 $smarty->setConfigDir('smarty/config');
 
 $pages = array();
+$pages['editUser'] = 'pages/user/editUser.php';
+$pages['listUsers'] = 'pages/user/listUsers.php';
 $pages['login'] = 'pages/user/login.php';
-$pages['register'] = 'pages/user/register.php';
 $pages['logout'] = 'pages/user/logout.php';
-$pages['listAlerts'] = 'pages/alert/listAlerts.php';
+$pages['refreshLevel'] = 'pages/user/refreshLevel.php';
+$pages['register'] = 'pages/user/register.php';
+
 $pages['createEntryFromAlert'] = 'pages/alert/createEntryFromAlert.php';
+$pages['deleteAlert'] = 'pages/alert/deleteAlert.php';
+$pages['listAlerts'] = 'pages/alert/listAlerts.php';
+
+$pages['deleteMac'] = 'pages/mac/deleteMac.php';
+$pages['editMac'] = 'pages/mac/editMac.php';
 $pages['listMacs'] = 'pages/mac/listMacs.php';
-$pages['listOwners'] = 'pages/owner/listOwners.php';
+
 $pages['addOwner'] = 'pages/owner/addOwner.php';
 $pages['deleteOwner'] = 'pages/owner/deleteOwner.php';
-$pages['refreshLevel'] = 'pages/user/refreshLevel.php';
-$pages['editMac'] = 'pages/mac/editMac.php';
-$pages['deleteMac'] = 'pages/mac/deleteMac.php';
-$pages['listUsers'] = 'pages/user/listUsers.php';
-$pages['editUser'] = 'pages/user/editUser.php';
+$pages['listOwners'] = 'pages/owner/listOwners.php';
+
 $pages['statistics'] = 'pages/statistics/listStatistics.php';
 
 $level = array();
-$level['login'] = 0;
-$level['register'] = 0;
-$level['logout'] = 1;
-$level['listAlerts'] = 2;
+$level['addOwner'] = 3;
 $level['createEntryFromAlert'] = 3;
+$level['deleteAlert'] = 3;
+$level['deleteMac'] = 3;
+$level['deleteOwner'] = 3;
+$level['editMac'] = 3;
+$level['editUser'] = 5;
+$level['listAlerts'] = 2;
 $level['listMacs'] = 2;
 $level['listOwners'] = 2;
-$level['addOwner'] = 3;
-$level['deleteOwner'] = 3;
-$level['refreshLevel'] = 1;
-$level['editMac'] = 3;
-$level['deleteMac'] = 3;
 $level['listUsers'] = 5;
-$level['editUser'] = 5;
+$level['login'] = 0;
+$level['logout'] = 1;
+$level['refreshLevel'] = 1;
+$level['register'] = 0;
 $level['statistics'] = 2;
 
 $header = array();
-$header['login'] = 'Login';
-$header['register'] = 'Register';
-$header['logout'] = 'Logout';
-$header['listAlerts'] = 'List alerts';
-$header['createEntryFromAlert'] = 'Create Entry from Alert';
-$header['listMacs'] = 'List macs';
-$header['listOwners'] = 'List Owners';
 $header['addOwner'] = 'Create an owner';
+$header['createEntryFromAlert'] = 'Create Entry from Alert';
+$header['deleteAlert'] = 'Delete an alert';
+$header['deleteMac'] = 'Delete a mac';
 $header['deleteOwner'] = 'Delete an owner';
 $header['editMac'] = 'Edit a mac';
-$header['deleteMac'] = 'Delete a mac';
-$header['listUsers'] = 'List users';
 $header['editUser'] = 'Edit a user';
+$header['listAlerts'] = 'List alerts';
+$header['listMacs'] = 'List macs';
+$header['listOwners'] = 'List Owners';
+$header['listUsers'] = 'List users';
+$header['login'] = 'Login';
+$header['logout'] = 'Logout';
+$header['register'] = 'Register';
 $header['statistics'] = 'Statistics';
 
 $found = false;
 $smarty->assign('hasHeader', false);
-
 foreach ($pages as $name => $file) {
 	if (isset($_GET[$name])) {
 		if (hasLevelAccess($level[$name])) {
